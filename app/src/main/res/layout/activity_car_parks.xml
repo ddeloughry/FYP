@@ -1,0 +1,221 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/default_gap"
+        android:paddingVertical="@dimen/default_gap">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/car_parks"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/refresh_activity_information"
+                android:onClick="refresh"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                app:srcCompat="@drawable/refresh" />
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:columnCount="2"
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap"
+            android:rowCount="9"
+            tools:layout_editor_absoluteY="457dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/name"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/spaces"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btn0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtvw0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtvw1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtvw2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtvw3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btn4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtvw4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btn5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtvw5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btn6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtvw6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btn7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtvw7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="backToMenu"
+        android:paddingHorizontal="@dimen/default_gap"
+        android:paddingVertical="@dimen/default_gap"
+        android:text="@string/back"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>

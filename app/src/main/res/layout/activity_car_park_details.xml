@@ -1,0 +1,188 @@
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/default_gap"
+        android:paddingVertical="@dimen/default_gap">
+
+        <TextView
+            android:id="@+id/viewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap">
+
+            <Button
+                android:id="@+id/reserveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="goToReserveSpace"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/reserve_a_space"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/refresh_activity_information"
+                android:onClick="refresh"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                app:srcCompat="@drawable/refresh" />
+
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:columnCount="2"
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap"
+            android:rowCount="9">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/free_spaces"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/viewFreeSpaces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/total_spaces"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/viewTotalSpaces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/vehicle_height"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/vwVehicleHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/price"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/vwPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/times"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/viewTimes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/last_updated"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/viewwLastUpdated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="20sp" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="backToCarParks"
+        android:paddingHorizontal="@dimen/default_gap"
+        android:paddingVertical="@dimen/default_gap"
+        android:text="@string/back"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>
+
+    <!--</RelativeLayout>-->

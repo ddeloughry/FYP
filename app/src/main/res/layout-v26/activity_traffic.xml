@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/current_traffic_estimations"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="9">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/name"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:text="@string/delay"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/carTraf0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/carTraf1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/carTraf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/carTraf3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/carTraf4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/carTraf5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/carTraf6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/carTraf7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="18sp" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="backToMenu"
+        android:text="@string/back"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>
