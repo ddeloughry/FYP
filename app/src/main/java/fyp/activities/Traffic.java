@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import fyp.model.CarPark;
-import fyp.model.JSONParser;
-import fyp.model.RetrieveJson;
+import fyp.tasks.JSONParser;
+import fyp.tasks.RetrieveJson;
 
 public class Traffic extends AppCompatActivity {
 

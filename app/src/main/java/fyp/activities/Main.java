@@ -8,29 +8,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import java.util.ArrayList;
-
-import fyp.model.AddTrafficStat;
-import fyp.model.CarPark;
-import fyp.model.LoadCarParks;
-
 public class Main extends AppCompatActivity {
-    private ArrayList<CarPark> carParksList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        carParksList = LoadCarParks.get(this);
-
-        Intent intent = new Intent(this, AddTrafficStat.class);
-        ArrayList<String> names = new ArrayList<>();
-        for (int i = 0; i < carParksList.size(); i++) {
-            names.add(carParksList.get(i).getName());
-        }
-        intent.putStringArrayListExtra("names", names);
-        startService(intent);
     }
 
 

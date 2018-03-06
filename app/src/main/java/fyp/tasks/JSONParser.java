@@ -1,4 +1,4 @@
-package fyp.model;
+package fyp.tasks;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
@@ -14,6 +14,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
+
+import fyp.model.CarPark;
+import fyp.model.ParkDateTime;
 
 public class JSONParser extends AsyncTask<JSONObject, Void, ArrayList<CarPark>> {
     private static HashMap<Integer, ParkDateTime> times;
@@ -100,13 +103,14 @@ public class JSONParser extends AsyncTask<JSONObject, Void, ArrayList<CarPark>> 
                 carPark.setFreeSpaces(j.getInt("free_spaces"));
                 carPark.setTotalSpaces(j.getInt("spaces"));
                 carPark.setLastUpdated(getLongTime(j.getString("date")));
-                if ((j.getString("price")).replaceAll("[^\\d.]", "").length() > 4) {
-                    carPark.setPricePerHour(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "").substring(0, 4)));
-                    carPark.setPricePerDay(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "").substring(5)));
-                } else {
-                    carPark.setPricePerHour(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "")));
-                    carPark.setPricePerDay(null);
-                }
+                carPark.setPriceString(j.getString("price"));
+//                if ((j.getString("price")).replaceAll("[^\\d.]", "").length() > 4) {
+//                    carPark.setPricePerHour(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "").substring(0, 4)));
+//                    carPark.setPricePerDay(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "").substring(5)));
+//                } else {
+//                    carPark.setPricePerHour(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "")));
+//                    carPark.setPricePerDay(null);
+//                }
 
                 String heightString = (j.getString("height_restrictions")).replaceAll("[^\\d.]", "");
                 carPark.setVehicleHeight(Double.parseDouble(heightString));

@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,7 +9,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap">
+        android:paddingVertical="@dimen/default_gap"
+        tools:targetApi="o">
 
         <TextView
             android:id="@+id/viewName"
@@ -20,7 +22,8 @@
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="36sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:targetApi="o" />
 
         <TextView
             android:id="@+id/carParkName"
@@ -29,14 +32,16 @@
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
             android:textAlignment="center"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:targetApi="o" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:paddingVertical="@dimen/default_gap"
+            tools:targetApi="o">
 
             <EditText
                 android:id="@+id/enterLicencePlate"
@@ -48,7 +53,8 @@
                 android:inputType="textPersonName"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:targetApi="o" />
 
             <ImageButton
                 android:id="@+id/clearText"
@@ -56,9 +62,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:contentDescription="@string/clears_input_text"
+                android:onClick="clearText"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+                tools:targetApi="o" />
 
         </LinearLayout>
 
@@ -68,7 +76,8 @@
             android:onClick="reserveSpace"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
-            android:text="@string/reserve" />
+            android:text="@string/reserve"
+            tools:targetApi="o" />
 
     </LinearLayout>
 
@@ -82,5 +91,6 @@
         android:text="@string/cancel"
         android:textAllCaps="true"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:targetApi="o" />
 </RelativeLayout>

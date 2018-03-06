@@ -1,37 +1,54 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingHorizontal="@dimen/default_gap"
+        android:paddingVertical="@dimen/default_gap"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        tools:targetApi="o" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap">
+        android:paddingVertical="@dimen/default_gap"
+        tools:targetApi="o">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            android:text="@string/login"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
+            android:orientation="horizontal">
+
+        </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/emailBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:paddingVertical="@dimen/default_gap"
+            tools:targetApi="o">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -39,29 +56,35 @@
                 android:hint="@string/enter_email_address"
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap" />
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="20sp"
+                tools:targetApi="o" />
 
             <ImageButton
                 android:id="@+id/clearEmail"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/clears_email_field"
+                android:onClick="clearEmail"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+                tools:targetApi="o" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/passwordBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:paddingVertical="@dimen/default_gap"
+            tools:targetApi="o">
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/password"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -69,43 +92,68 @@
                 android:hint="@string/enter_password"
                 android:inputType="textPassword"
                 android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap" />
+                android:paddingVertical="@dimen/default_gap"
+                android:textSize="20sp"
+                tools:targetApi="o" />
 
             <ImageButton
                 android:id="@+id/clearPass"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="clearPassword"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="TODO"
+                tools:targetApi="o" />
+
         </LinearLayout>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/viewEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap"
+            android:textAlignment="center"
+            android:visibility="gone"
+            tools:targetApi="o" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:paddingVertical="@dimen/default_gap"
+            tools:targetApi="o">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="login"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:text="@string/login" />
+                android:text="@string/login"
+                android:textSize="24sp"
+                tools:targetApi="o" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/signUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="signUp"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:text="@string/sign_up" />
+                android:text="@string/sign_up"
+                android:textSize="24sp"
+                tools:targetApi="o" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -120,5 +168,7 @@
         android:text="@string/back"
         android:textAllCaps="true"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:targetApi="o" />
+
 </RelativeLayout>

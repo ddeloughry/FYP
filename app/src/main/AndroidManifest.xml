@@ -18,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main">
+        <activity
+            android:name=".Main"
+            android:theme="@style/splashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,9 +49,9 @@
         <activity android:name=".Reservation" />
         <activity android:name=".Recommend" />
         <activity android:name=".ReserveSpace" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
 
-        <service android:name="fyp.model.AddTrafficStat" />
+
     </application>
 
 </manifest>

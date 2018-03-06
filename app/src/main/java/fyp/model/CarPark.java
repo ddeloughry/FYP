@@ -11,6 +11,7 @@ public class CarPark {
     private String name;
     private long lastUpdated;
     private HashMap<Integer, ParkDateTime> times = new HashMap<>();
+    private String priceString;
 
     public CarPark() {
     }
@@ -145,6 +146,14 @@ public class CarPark {
 
     public void setPricePerDay(Double pricePerDay) {
         this.pricePerDay = pricePerDay;
+    }
+
+    public void setPriceString(String priceString) {
+        this.priceString = priceString;
+    }
+
+    public String getPriceString() {
+        return priceString;
     }
 }
 

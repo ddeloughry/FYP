@@ -3,7 +3,7 @@ package fyp.model;
 import java.util.Date;
 
 
-public class ParkReservation {
+public class ParkReservation  {
     private long startTime, endTime;
     private String carParkName, licencePlate;
 

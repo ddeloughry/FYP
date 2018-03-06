@@ -55,4 +55,11 @@
     <string name="enter_email_address">german</string>
     <string name="clears_email_field">german</string>
     <string name="clears_input_text">german</string>
+    <string name="login_to_view_directories">german</string>
+    <string name="distance_units">german</string>
+    <string name="metric">german</string>
+    <string name="imperial">german</string>
+    <string name="authentication_failed">Authentication failed</string>
+    <string name="sign_out">Sign out</string>
+    <string name="required">Required</string>
 </resources>
