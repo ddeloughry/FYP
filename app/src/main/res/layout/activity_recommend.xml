@@ -9,8 +9,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
-        tools:targetApi="o">
+        android:paddingVertical="@dimen/default_gap">
 
         <TextView
             android:layout_width="match_parent"
@@ -21,16 +20,14 @@
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="36sp"
-            android:textStyle="bold"
-            tools:targetApi="o" />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            tools:targetApi="o">
+            android:paddingVertical="@dimen/default_gap">
 
             <EditText
                 android:id="@+id/entDest"
@@ -42,8 +39,7 @@
                 android:inputType="textPersonName"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="24sp"
-                tools:targetApi="o" />
+                android:textSize="24sp" />
 
             <ImageButton
                 android:id="@+id/imageButton3"
@@ -52,9 +48,7 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
-                android:contentDescription="TODO"
-                tools:targetApi="o" />
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
         </LinearLayout>
 
@@ -63,8 +57,7 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
-            android:text="@string/search"
-            tools:targetApi="o" />
+            android:text="@string/search" />
 
     </LinearLayout>
 
@@ -78,7 +71,6 @@
         android:text="@string/back"
         android:textAllCaps="true"
         android:textSize="24sp"
-        android:textStyle="bold"
-        tools:targetApi="o" />
+        android:textStyle="bold" />
 
 </RelativeLayout>

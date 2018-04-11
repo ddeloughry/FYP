@@ -9,8 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
-        tools:targetApi="o">
+        android:paddingVertical="@dimen/default_gap">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,8 +17,7 @@
             android:layout_weight="1"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            tools:targetApi="o">
+            android:paddingVertical="@dimen/default_gap">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -31,8 +29,7 @@
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -43,8 +40,7 @@
                 android:onClick="refresh"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                app:srcCompat="@drawable/refresh"
-                tools:targetApi="o" />
+                app:srcCompat="@drawable/refresh" />
         </LinearLayout>
 
         <GridLayout
@@ -55,8 +51,7 @@
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
             android:rowCount="9"
-            tools:layout_editor_absoluteY="457dp"
-            tools:targetApi="o">
+            tools:layout_editor_absoluteY="457dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,8 +62,7 @@
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,8 +73,7 @@
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/btn0"
@@ -88,8 +81,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtvw0"
@@ -97,8 +89,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn1"
@@ -106,8 +97,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtvw1"
@@ -115,8 +105,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn2"
@@ -124,8 +113,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtvw2"
@@ -133,8 +121,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn3"
@@ -142,8 +129,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtvw3"
@@ -151,8 +137,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn4"
@@ -160,8 +145,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtvw4"
@@ -169,8 +153,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn5"
@@ -178,8 +161,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtvw5"
@@ -187,8 +169,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn6"
@@ -196,8 +177,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtvw6"
@@ -205,8 +185,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn7"
@@ -214,8 +193,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtvw7"
@@ -223,8 +201,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:textSize="18sp"
-                tools:targetApi="o" />
+                android:textSize="18sp" />
 
         </GridLayout>
 
@@ -240,6 +217,5 @@
         android:text="@string/back"
         android:textAllCaps="true"
         android:textSize="24sp"
-        android:textStyle="bold"
-        tools:targetApi="o" />
+        android:textStyle="bold" />
 </RelativeLayout>

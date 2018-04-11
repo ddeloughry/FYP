@@ -5,16 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import fyp.model.MyDao;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import fyp.model.ParkReservation;
-import fyp.model.User;
 
 public class ReserveSpace extends AppCompatActivity {
     private EditText enterLicence;
-    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,13 @@ public class ReserveSpace extends AppCompatActivity {
         TextView carParkName = findViewById(R.id.carParkName);
         enterLicence = findViewById(R.id.enterLicencePlate);
         carParkName.setText(getIntent().getStringExtra("carParkName"));
-        email = User.getLoggedEmail();
+        ImageButton clearText = findViewById(R.id.clearText);
+        clearText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enterLicence.setText("");
+            }
+        });
     }
 
 
@@ -33,7 +40,8 @@ public class ReserveSpace extends AppCompatActivity {
                     System.currentTimeMillis() + 3600000,
                     getIntent().getStringExtra("carParkName"),
                     enterLicence.getText().toString());
-            MyDao.putReservation(email, reservation);
+            DatabaseReference reservationDb = (FirebaseDatabase.getInstance()).getReference("reservation").child(enterLicence.getText().toString());
+            reservationDb.setValue(reservation);
             enterLicence.setText("");
             Toast.makeText(this, getString(R.string.res_succ) + "!", Toast.LENGTH_LONG).show();
             cancelReservation(view);
@@ -51,9 +59,5 @@ public class ReserveSpace extends AppCompatActivity {
         Intent intent = new Intent(this, CarParkDetails.class);
         intent.putExtra("carParkName", getIntent().getStringExtra("carParkName"));
         startActivity(intent);
-    }
-
-    public void clearText(View v) {
-        enterLicence.setText("");
     }
 }

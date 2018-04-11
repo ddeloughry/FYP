@@ -13,7 +13,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 import fyp.model.CarPark;
-import fyp.tasks.LoadCarParks;
+import fyp.model.LoadCarParks;
 
 public class CarParks extends AppCompatActivity {
     private ArrayList<CarPark> carParksList;
@@ -26,7 +26,7 @@ public class CarParks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_parks);
 
-        final ArrayList<CarPark> carParksList = LoadCarParks.get(this);
+        carParksList = LoadCarParks.get(this);
 
         assignTextViews();
         for (int i = 0; i < carParksList.size(); i++) {

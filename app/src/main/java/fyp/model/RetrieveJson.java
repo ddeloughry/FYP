@@ -1,10 +1,8 @@
-package fyp.tasks;
+package fyp.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,12 +36,10 @@ public class RetrieveJson extends AsyncTask<String, Void, JSONObject> {
             backUpJson(jsonText);
             is.close();
             return new JSONObject(jsonText);
-        } catch (IOException | JSONException e) {
-            Log.d("myError", e.toString());
-            e.printStackTrace();
-            Toast.makeText(context.get(), e.toString(), Toast.LENGTH_SHORT).show();
-            return null;
+        } catch (IOException | JSONException e1) {
+            e1.printStackTrace();
         }
+        return null;
     }
 
 //    protected void onPostExecute(Boolean result) {

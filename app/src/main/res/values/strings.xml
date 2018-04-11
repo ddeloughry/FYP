@@ -54,11 +54,4 @@
     <string name="login">Login</string>
     <string name="clears_email_field">Clears email field</string>
     <string name="clears_input_text">Clears input text</string>
-    <string name="login_to_view_directories">Login to view your reservation</string>
-    <string name="distance_units">Distance Units</string>
-    <string name="metric">Metric</string>
-    <string name="imperial">Imperial</string>
-    <string name="authentication_failed">Authentication failed</string>
-    <string name="sign_out">Sign out</string>
-    <string name="required">Required</string>
 </resources>

@@ -9,8 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
-        tools:targetApi="o">
+        android:paddingVertical="@dimen/default_gap">
 
         <ImageButton
             android:id="@+id/imageButton5"
@@ -20,9 +19,7 @@
             android:onClick="goToOptions"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
-            app:srcCompat="@drawable/options"
-            android:contentDescription="TODO"
-            tools:targetApi="o" />
+            app:srcCompat="@drawable/options" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,8 +32,7 @@
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="30sp"
-            android:textStyle="bold"
-            tools:targetApi="o" />
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/imageButton4"
@@ -46,9 +42,7 @@
             android:onClick="goToLogin"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
-            app:srcCompat="@drawable/login"
-            android:contentDescription="TODO"
-            tools:targetApi="o" />
+            app:srcCompat="@drawable/login" />
 
     </LinearLayout>
 
@@ -60,15 +54,13 @@
         android:layout_centerVertical="true"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
-        tools:targetApi="o">
+        android:paddingVertical="@dimen/default_gap">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            tools:targetApi="o">
+            android:paddingVertical="@dimen/default_gap">
 
             <Button
                 android:id="@+id/button5"
@@ -83,16 +75,14 @@
                 android:textAllCaps="true"
                 android:textSize="24sp"
                 tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="84dp"
-                tools:targetApi="o" />
+                tools:layout_editor_absoluteY="84dp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            tools:targetApi="o">
+            android:paddingVertical="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -105,16 +95,14 @@
                 android:paddingVertical="@dimen/default_gap"
                 android:text="@string/car_parks"
                 android:textAllCaps="true"
-                android:textSize="24sp"
-                tools:targetApi="o" />
+                android:textSize="24sp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            tools:targetApi="o">
+            android:paddingVertical="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -126,16 +114,14 @@
                 android:paddingVertical="@dimen/default_gap"
                 android:text="@string/traffic_estimations"
                 android:textAllCaps="true"
-                android:textSize="24sp"
-                tools:targetApi="o" />
+                android:textSize="24sp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            tools:targetApi="o">
+            android:paddingVertical="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -147,16 +133,14 @@
                 android:paddingVertical="@dimen/default_gap"
                 android:text="@string/view_reservation"
                 android:textAllCaps="true"
-                android:textSize="24sp"
-                tools:targetApi="o" />
+                android:textSize="24sp" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            tools:targetApi="o">
+            android:paddingVertical="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -168,8 +152,7 @@
                 android:paddingVertical="@dimen/default_gap"
                 android:text="@string/recommend_car_park"
                 android:textAllCaps="true"
-                android:textSize="24sp"
-                tools:targetApi="o" />
+                android:textSize="24sp" />
         </RelativeLayout>
     </LinearLayout>
 

@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
@@ -16,12 +18,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import fyp.model.MyDao;
 import fyp.model.ParkReservation;
-import fyp.model.User;
 
 public class Reservation extends AppCompatActivity {
-    private ParkReservation selectedReservation;
+    private ParkReservation selectedReservation = new ParkReservation();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,43 +33,38 @@ public class Reservation extends AppCompatActivity {
         final TextView viewStartTime = findViewById(R.id.txtvw0);
         final TextView viewEndTime = findViewById(R.id.txtvw1);
         final TextView viewLicensePlate = findViewById(R.id.txtvw2);
-        if (User.isLogged()) {
-            (MyDao.getReservationDb()).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        selectedReservation = dataSnapshot.getValue(ParkReservation.class);
-                        assert selectedReservation != null;
-                        vwCarParkName.setText(selectedReservation.getCarParkName());
-                        DateFormat formatter = new SimpleDateFormat("HH:mm:ss\nE dd-MMM-yy", Locale.UK);
-                        viewStartTime.setText(String.valueOf(formatter.format(new Date(selectedReservation.getStartTime()))));
-                        viewEndTime.setText(String.valueOf(formatter.format(new Date(selectedReservation.getEndTime()))));
-                        viewLicensePlate.setText(String.valueOf(selectedReservation.getLicencePlate()));
-                        reserveGrid.setVisibility(View.VISIBLE);
-                    } else {
-                        selectedReservation = null;
-                        vwCarParkName.setText(getString(R.string.you_do_not_currently_have_any_reservations));
-                        vwCarParkName.setAllCaps(false);
-                        viewStartTime.setText("");
-                        viewEndTime.setText("");
-                        viewLicensePlate.setText("");
-                        reserveGrid.setVisibility(View.INVISIBLE);
-                    }
-                }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reservationDb = database.getReference("reservation").child("reservation1");
+        reservationDb.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    selectedReservation.setCarParkName(dataSnapshot.getValue(ParkReservation.class).getCarParkName());
+                    selectedReservation.setStartTime(dataSnapshot.getValue(ParkReservation.class).getStartTime());
+                    selectedReservation.setEndTime(dataSnapshot.getValue(ParkReservation.class).getEndTime());
+                    selectedReservation.setLicencePlate(dataSnapshot.getValue(ParkReservation.class).getLicencePlate());
+                    vwCarParkName.setText(selectedReservation.getCarParkName());
+                    DateFormat formatter = new SimpleDateFormat("HH:mm:ss\nE dd-MMM-yy", Locale.UK);
+                    viewStartTime.setText(String.valueOf(formatter.format(new Date(selectedReservation.getStartTime()))));
+                    viewEndTime.setText(String.valueOf(formatter.format(new Date(selectedReservation.getEndTime()))));
+                    viewLicensePlate.setText(String.valueOf(selectedReservation.getLicencePlate()));
+                    reserveGrid.setVisibility(View.VISIBLE);
+                } else {
+                    vwCarParkName.setText(getString(R.string.you_do_not_currently_have_any_reservations));
+                    viewStartTime.setText("");
+                    viewEndTime.setText("");
+                    viewLicensePlate.setText("");
+                    reserveGrid.setVisibility(View.INVISIBLE);
                 }
-            });
-        } else {
-            selectedReservation = null;
-            vwCarParkName.setText(R.string.login_to_view_directories);
-            vwCarParkName.setAllCaps(false);
-            viewStartTime.setText("");
-            viewEndTime.setText("");
-            viewLicensePlate.setText("");
-            reserveGrid.setVisibility(View.INVISIBLE);
-        }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
     }
 
     public void backToMenu(View view) {

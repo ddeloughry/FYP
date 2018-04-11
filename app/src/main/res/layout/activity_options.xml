@@ -1,127 +1,63 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
-        android:text="@string/options"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        tools:targetApi="o" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
-        tools:targetApi="o">
+        android:paddingVertical="@dimen/default_gap">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap"
+            android:text="@string/options"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap"
+            android:text="@string/language"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:paddingHorizontal="@dimen/default_gap"
+            android:paddingVertical="@dimen/default_gap">
 
-            <TextView
-                android:layout_width="match_parent"
+            <ImageButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:text="@string/language"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/set_english"
+                android:onClick="setEnglish"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                tools:targetApi="o">
+                app:srcCompat="@drawable/en" />
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:contentDescription="@string/set_english"
-                    android:onClick="setEnglish"
-                    android:paddingHorizontal="@dimen/default_gap"
-                    android:paddingVertical="@dimen/default_gap"
-                    app:srcCompat="@drawable/en"
-                    tools:targetApi="o" />
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:contentDescription="@string/set_german"
-                    android:onClick="setDeutsch"
-                    android:paddingHorizontal="@dimen/default_gap"
-                    android:paddingVertical="@dimen/default_gap"
-                    app:srcCompat="@drawable/deu"
-                    tools:targetApi="o" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
+            <ImageButton
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:text="@string/distance_units"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                tools:targetApi="o" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:contentDescription="@string/set_german"
+                android:onClick="setDeutsch"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                tools:targetApi="o">
-
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingHorizontal="@dimen/default_gap"
-                    android:paddingVertical="@dimen/default_gap"
-                    android:text="@string/metric"
-                    android:textSize="24sp"
-                    tools:targetApi="o" />
-
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingHorizontal="@dimen/default_gap"
-                    android:paddingVertical="@dimen/default_gap"
-                    android:text="@string/imperial"
-                    android:textSize="24sp"
-                    tools:targetApi="o" />
-            </LinearLayout>
+                app:srcCompat="@drawable/deu" />
         </LinearLayout>
 
     </LinearLayout>
@@ -136,6 +72,5 @@
         android:textAllCaps="true"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:paddingVertical="@dimen/default_gap"
-        tools:targetApi="o" />
+        android:paddingVertical="@dimen/default_gap" />
 </RelativeLayout>
