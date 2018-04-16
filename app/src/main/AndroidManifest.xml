@@ -43,13 +43,13 @@
             android:label="@string/title_activity_map" />
         <activity android:name=".Options" />
         <activity android:name=".CarParkDetails" />
-        <activity android:name=".Traffic" />
         <activity android:name=".Reservation" />
         <activity android:name=".Recommend" />
         <activity android:name=".ReserveSpace" />
-        <activity android:name=".Login"></activity>
-
-        <service android:name="fyp.model.AddTrafficStat" />
+        <activity android:name=".Login" />
+        <activity android:name=".TrafficDirection" />
+        <activity android:name=".ChooseParkTraffic" />
+        <activity android:name=".ViewParkTraffic"></activity>
     </application>
 
 </manifest>

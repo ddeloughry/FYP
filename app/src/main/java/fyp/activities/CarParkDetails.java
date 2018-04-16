@@ -2,7 +2,6 @@ package fyp.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -12,75 +11,42 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
-import java.util.concurrent.ExecutionException;
 
 import fyp.model.CarPark;
-import fyp.model.JSONParser;
+import fyp.model.LoadCarParks;
 import fyp.model.ParkDateTime;
-import fyp.model.RetrieveJson;
 
 public class CarParkDetails extends AppCompatActivity {
     private CarPark selectedCarPark;
+    private ArrayList<CarPark> carParksList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_park_details);
-        RetrieveJson task = null;
-        if (isOnline()) {
-            task = new RetrieveJson(this);
-            String urlStr = "http://data.corkcity.ie/api/action/datastore_search?resource_id=6cc1028e-7388-4bc5-95b7-667a59aa76dc";
-            task.execute(urlStr);
-        }
-        JSONObject json = null;
-        if (isOnline()) {
-            try {
-                assert task != null;
-                json = task.get();
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            }
-        } else {
-            SharedPreferences sharedPref = this.getSharedPreferences("backUp", Context.MODE_PRIVATE);
-            try {
-                json = new JSONObject(sharedPref.getString("jsonBackUp", null));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-        JSONParser task2 = new JSONParser();
-        task2.execute(json);
-        ArrayList<CarPark> carParksList = null;
+
         try {
-            carParksList = task2.get();
-        } catch (InterruptedException | ExecutionException e) {
+            carParksList = LoadCarParks.get(this);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-        assert carParksList != null;
         for (CarPark carPark : carParksList) {
             if (carPark.getName().equalsIgnoreCase(getIntent().getStringExtra("carParkName"))) {
                 selectedCarPark = carPark;
             }
         }
         Button reserveButton = findViewById(R.id.reserveBtn);
-        try {
-            if (selectedCarPark.isFull() || !(isOnline()) || !(selectedCarPark.isOpen())) {
-                reserveButton.setEnabled(false);
-            }
-        } catch (ParseException e) {
-            e.printStackTrace();
+        if (selectedCarPark.isFull() || !(isOnline()) || !(selectedCarPark.isOpen()) || FirebaseAuth.getInstance().getCurrentUser() == null) {
+            reserveButton.setEnabled(false);
         }
         TextView vwCarParkName = findViewById(R.id.viewName);
         TextView vwFreeSpaces = findViewById(R.id.viewFreeSpaces);
@@ -88,33 +54,21 @@ public class CarParkDetails extends AppCompatActivity {
         TextView vwLastUpdated = findViewById(R.id.viewwLastUpdated);
         TextView vwVehicleHeight = findViewById(R.id.vwVehicleHeight);
         TextView vwPrice = findViewById(R.id.vwPrice);
-        String priceString = "€" + selectedCarPark.getPricePerHour() + "/hour";
-        if (selectedCarPark.getPricePerDay() != null) {
-            priceString += "\n€" + selectedCarPark.getPricePerDay() + "/day max.";
-        }
-        vwPrice.setText(priceString);
+        vwPrice.setText(selectedCarPark.getPrice());
         Button vwTimes = findViewById(R.id.viewTimes);
         vwCarParkName.setText(selectedCarPark.getName());
-        try {
-            if (isOnline() && selectedCarPark.isOpen()) {
-                vwFreeSpaces.setText(String.valueOf(selectedCarPark.getFreeSpaces()));
-            } else if (!selectedCarPark.isOpen()) {
-                vwFreeSpaces.setText(getString(R.string.closed));
-            } else {
-                vwFreeSpaces.setText(getString(R.string.unavailable));
-            }
-        } catch (ParseException e) {
-            e.printStackTrace();
+        if (isOnline() && selectedCarPark.isOpen()) {
+            vwFreeSpaces.setText(String.valueOf(selectedCarPark.getFreeSpaces()));
+        } else if (!selectedCarPark.isOpen()) {
+            vwFreeSpaces.setText(getString(R.string.closed));
+        } else {
+            vwFreeSpaces.setText(getString(R.string.unavailable));
         }
         vwTotalSpaces.setText(String.valueOf(selectedCarPark.getTotalSpaces()));
         DateFormat formatter = new SimpleDateFormat("HH:mm:ss\nE dd-MMM-yy", Locale.getDefault());
         vwLastUpdated.setText(String.valueOf(formatter.format(new Date(selectedCarPark.getLastUpdated()))));
         vwVehicleHeight.setText(String.valueOf(selectedCarPark.getVehicleHeight() + "m"));
-        try {
-            vwTimes.setText(getTodaysTimes(selectedCarPark.getTimes()));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        vwTimes.setText(getTodaysTimes(selectedCarPark.getTimes()));
 
         vwTimes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,7 +99,6 @@ public class CarParkDetails extends AppCompatActivity {
 
     private boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        assert cm != null;
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
@@ -188,7 +141,7 @@ public class CarParkDetails extends AppCompatActivity {
         }
     }
 
-    private String getTodaysTimes(HashMap<Integer, ParkDateTime> times) throws ParseException {
+    private String getTodaysTimes(HashMap<Integer, ParkDateTime> times) {
         Calendar now = Calendar.getInstance();
         int day = now.get(Calendar.DAY_OF_WEEK);
         switch (day) {

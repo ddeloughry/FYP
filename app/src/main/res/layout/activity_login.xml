@@ -1,18 +1,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap">
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/loginTextview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
@@ -25,87 +23,122 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap">
 
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/enter_email_address"
-                android:inputType="textEmailAddress"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap" />
-
-            <ImageButton
-                android:id="@+id/clearEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:contentDescription="@string/clears_email_field"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
-
-            <EditText
-                android:id="@+id/editText2"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="@string/enter_password"
-                android:inputType="textPassword"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap" />
-
-            <ImageButton
-                android:id="@+id/clearPass"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/viewEmail"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
-        </LinearLayout>
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/emailBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:orientation="horizontal"
                 android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
-                android:text="@string/login" />
+                android:paddingVertical="@dimen/default_gap">
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/enter_email_address"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="@dimen/default_gap"
+                    android:paddingVertical="@dimen/default_gap" />
+
+                <Button
+                    android:id="@+id/clearEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="clearEmail"
+                    android:text="@string/x" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/passwordBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/enter_password"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="@dimen/default_gap"
+                    android:paddingVertical="@dimen/default_gap" />
+
+                <Button
+                    android:id="@+id/clearPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="clearPassword"
+                    android:text="@string/x" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/default_gap"
+                android:paddingVertical="@dimen/default_gap">
+
+
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="login"
+                    android:paddingHorizontal="@dimen/default_gap"
+                    android:paddingVertical="@dimen/default_gap"
+                    android:text="@string/login" />
+
+                <Button
+                    android:id="@+id/signUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="signUp"
+                    android:paddingHorizontal="@dimen/default_gap"
+                    android:paddingVertical="@dimen/default_gap"
+                    android:text="@string/sign_up" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/signOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="signOut"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:text="@string/sign_up" />
+                android:text="@string/sign_out" />
         </LinearLayout>
 
     </LinearLayout>

@@ -41,15 +41,6 @@
                 android:paddingVertical="@dimen/default_gap"
                 android:textSize="24sp" />
 
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
-                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
-
         </LinearLayout>
 
         <Button

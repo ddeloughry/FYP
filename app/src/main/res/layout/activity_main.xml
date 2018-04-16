@@ -19,7 +19,9 @@
             android:onClick="goToOptions"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
-            app:srcCompat="@drawable/options" />
+            app:srcCompat="@drawable/options"
+            android:contentDescription="@string/go_to_options"
+            tools:targetApi="o" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -32,7 +34,8 @@
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:targetApi="o" />
 
         <ImageButton
             android:id="@+id/imageButton4"
@@ -42,7 +45,9 @@
             android:onClick="goToLogin"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
-            app:srcCompat="@drawable/login" />
+            app:srcCompat="@drawable/login"
+            android:contentDescription="@string/go_to_login"
+            tools:targetApi="o" />
 
     </LinearLayout>
 
@@ -54,7 +59,8 @@
         android:layout_centerVertical="true"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap">
+        android:paddingVertical="@dimen/default_gap"
+        tools:targetApi="o">
 
         <RelativeLayout
             android:layout_width="match_parent"

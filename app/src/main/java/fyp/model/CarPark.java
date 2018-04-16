@@ -1,14 +1,13 @@
 package fyp.model;
 
 
-import java.text.ParseException;
 import java.util.Calendar;
 import java.util.HashMap;
 
 public class CarPark {
     private int id, identifier, totalSpaces, freeSpaces;
-    private Double latitude, longitude, pricePerHour, pricePerDay, vehicleHeight;
-    private String name;
+    private Double latitude, longitude, vehicleHeight;
+    private String name, price;
     private long lastUpdated;
     private HashMap<Integer, ParkDateTime> times = new HashMap<>();
 
@@ -100,7 +99,7 @@ public class CarPark {
         this.times = times;
     }
 
-    public boolean isOpen() throws ParseException {
+    public boolean isOpen() {
         Calendar now = Calendar.getInstance();
         int day = now.get(Calendar.DAY_OF_WEEK);
         if (day == 1) {
@@ -131,20 +130,12 @@ public class CarPark {
     }
 
 
-    public double getPricePerHour() {
-        return pricePerHour;
+    public String getPrice() {
+        return price;
     }
 
-    public void setPricePerHour(double pricePerHour) {
-        this.pricePerHour = pricePerHour;
-    }
-
-    public Double getPricePerDay() {
-        return pricePerDay;
-    }
-
-    public void setPricePerDay(Double pricePerDay) {
-        this.pricePerDay = pricePerDay;
+    public void setPrice(String price) {
+        this.price = price;
     }
 }
 

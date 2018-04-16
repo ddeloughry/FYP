@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,28 +18,34 @@ import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicReference;
 
 
-public class RetrieveJson extends AsyncTask<String, Void, JSONObject> {
+public class RetrieveJsonArray extends AsyncTask<URL, Void, JSONArray> {
     private final AtomicReference<Context> context = new AtomicReference<>();
 
-    public RetrieveJson(Context context) {
+    public RetrieveJsonArray(Context context) {
         this.context.set(context);
     }
 
-    protected JSONObject doInBackground(String... urls) {
+    protected JSONArray doInBackground(URL... urls) {
         try {
-            URL url = new URL(urls[0]);
-            URLConnection urlConnection = url.openConnection();
-//            urlConnection.setConnectTimeout(1000);
-            InputStream is = urlConnection.getInputStream();
+            URLConnection urlConnection;
+            InputStream is;
+            try {
+                urlConnection = (urls[0]).openConnection();
+                is = urlConnection.getInputStream();
+                urlConnection.setConnectTimeout(10);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
             String jsonText = readAll(rd);
             backUpJson(jsonText);
             is.close();
-            return new JSONObject(jsonText);
+            return new JSONArray(jsonText);
         } catch (IOException | JSONException e1) {
             e1.printStackTrace();
+            return null;
         }
-        return null;
     }
 
 //    protected void onPostExecute(Boolean result) {

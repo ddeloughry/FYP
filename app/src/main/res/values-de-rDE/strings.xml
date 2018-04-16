@@ -30,7 +30,6 @@
     <string name="enter_destination">german</string>
     <string name="recommend_car_park">german</string>
     <string name="delay">german</string>
-    <string name="current_traffic_estimations">german</string>
     <string name="refresh_activity_information">german</string>
     <string name="res_succ">german</string>
     <string name="enter_lice_pl">german</string>
@@ -55,4 +54,15 @@
     <string name="enter_email_address">german</string>
     <string name="clears_email_field">german</string>
     <string name="clears_input_text">german</string>
+    <string name="go_to_login">german</string>
+    <string name="go_to_options">german</string>
+    <string name="please_log_in_to_reserve_a_space">german</string>
+    <string name="north">german</string>
+    <string name="direction">german</string>
+    <string name="select_car_park">german</string>
+    <string name="sign_out">german</string>
+    <string name="south">german</string>
+    <string name="east">german</string>
+    <string name="west">german</string>
+    <string name="x">X</string>
 </resources>

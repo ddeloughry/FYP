@@ -14,7 +14,6 @@
     <string name="language">Language</string>
     <string name="reservations">Your Reservation</string>
     <string name="you_do_not_currently_have_any_reservations">You do not currently have any reservations</string>
-    <string name="current_traffic_estimations">Current Traffic Estimations</string>
     <string name="delay">Delay</string>
     <string name="recommend_car_park">Recommend Car Park</string>
     <string name="enter_destination">Enter destination</string>
@@ -54,4 +53,15 @@
     <string name="login">Login</string>
     <string name="clears_email_field">Clears email field</string>
     <string name="clears_input_text">Clears input text</string>
+    <string name="go_to_options">Go to options</string>
+    <string name="go_to_login">Go to login</string>
+    <string name="please_log_in_to_reserve_a_space">Please log in to reserve a space</string>
+    <string name="north">North</string>
+    <string name="west">West</string>
+    <string name="east">East</string>
+    <string name="south">South</string>
+    <string name="x">X</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="select_car_park">Select Car Park</string>
+    <string name="direction">Direction</string>
 </resources>

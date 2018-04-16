@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 
 import fyp.model.CarPark;
@@ -25,30 +24,27 @@ public class CarParks extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_parks);
-
-        carParksList = LoadCarParks.get(this);
-
+        try {
+            carParksList = LoadCarParks.get(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         assignTextViews();
         for (int i = 0; i < carParksList.size(); i++) {
             vwCarParkNames.get(i).setText(carParksList.get(i).getName());
             if (isOnline()) {
-                try {
-                    if (carParksList.get(i).isOpen()) {
-                        if (!carParksList.get(i).isFull()) {
-                            vwCarParkSpaces.get(i).setText(String.valueOf(carParksList.get(i).getFreeSpaces()));
-                        } else {
-                            vwCarParkSpaces.get(i).setText(getString(R.string.full));
-                        }
+                if (carParksList.get(i).isOpen()) {
+                    if (!carParksList.get(i).isFull()) {
+                        vwCarParkSpaces.get(i).setText(String.valueOf(carParksList.get(i).getFreeSpaces()));
                     } else {
-                        vwCarParkSpaces.get(i).setText(getString(R.string.closed));
+                        vwCarParkSpaces.get(i).setText(getString(R.string.full));
                     }
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                } else {
+                    vwCarParkSpaces.get(i).setText(getString(R.string.closed));
                 }
             } else {
                 vwCarParkSpaces.get(i).setText(getString(R.string.unavailable));
             }
-
             final int finalI = i;
             vwCarParkNames.get(i).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -102,8 +98,10 @@ public class CarParks extends AppCompatActivity {
 
     private boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        assert cm != null;
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        NetworkInfo netInfo = null;
+        if (cm != null) {
+            netInfo = cm.getActiveNetworkInfo();
+        }
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 

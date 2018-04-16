@@ -1,6 +1,5 @@
 package fyp.model;
 
-import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 
 import org.json.JSONArray;
@@ -83,7 +82,6 @@ public class JSONParser extends AsyncTask<JSONObject, Void, ArrayList<CarPark>> 
         return arr;
     }
 
-    @SuppressLint("UseSparseArrays")
     @Override
     protected ArrayList<CarPark> doInBackground(JSONObject... jsonObjects) {
         JSONObject json = jsonObjects[0];
@@ -101,13 +99,8 @@ public class JSONParser extends AsyncTask<JSONObject, Void, ArrayList<CarPark>> 
                 carPark.setTotalSpaces(j.getInt("spaces"));
                 carPark.setLastUpdated(getLongTime(j.getString("date")));
                 if ((j.getString("price")).replaceAll("[^\\d.]", "").length() > 4) {
-                    carPark.setPricePerHour(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "").substring(0, 4)));
-                    carPark.setPricePerDay(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "").substring(5)));
-                } else {
-                    carPark.setPricePerHour(Double.parseDouble((j.getString("price")).replaceAll("[^\\d.]", "")));
-                    carPark.setPricePerDay(null);
+                    carPark.setPrice((j.getString("price")).replaceAll("[^\\d.]", "").substring(0, 4));
                 }
-
                 String heightString = (j.getString("height_restrictions")).replaceAll("[^\\d.]", "");
                 carPark.setVehicleHeight(Double.parseDouble(heightString));
                 String daysTimes = j.getString("opening_times");
