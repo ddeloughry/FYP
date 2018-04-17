@@ -18,7 +18,7 @@ import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicReference;
 
 
-public class RetrieveJsonObject extends AsyncTask<URL, Void, JSONObject> {
+class RetrieveJsonObject extends AsyncTask<URL, Void, JSONObject> {
     private final AtomicReference<Context> context = new AtomicReference<>();
 
     public RetrieveJsonObject(Context context) {
@@ -64,7 +64,7 @@ public class RetrieveJsonObject extends AsyncTask<URL, Void, JSONObject> {
     private void backUpJson(String jsonText) {
         SharedPreferences sharedPref = context.get().getSharedPreferences("backUp", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("jsonBackUp", jsonText);
+        editor.putString("parkingBackup", jsonText);
         editor.apply();
     }
 

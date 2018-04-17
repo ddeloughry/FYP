@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,7 +11,7 @@
         <TextView
             android:id="@+id/loginTextview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
@@ -18,14 +19,16 @@
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="36sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:targetApi="o" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:paddingVertical="@dimen/default_gap"
+            tools:targetApi="o">
 
             <TextView
                 android:id="@+id/viewEmail"
@@ -38,7 +41,8 @@
                 android:textAllCaps="false"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:targetApi="o" />
 
             <LinearLayout
                 android:id="@+id/emailBox"
@@ -47,7 +51,8 @@
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap">
+                android:paddingVertical="@dimen/default_gap"
+                tools:targetApi="o">
 
                 <EditText
                     android:id="@+id/email"
@@ -58,10 +63,10 @@
                     android:hint="@string/enter_email_address"
                     android:inputType="textEmailAddress"
                     android:paddingHorizontal="@dimen/default_gap"
-                    android:paddingVertical="@dimen/default_gap" />
+                    android:paddingVertical="@dimen/default_gap"
+                    tools:targetApi="o" />
 
                 <Button
-                    android:id="@+id/clearEmail"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -77,7 +82,8 @@
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap">
+                android:paddingVertical="@dimen/default_gap"
+                tools:targetApi="o">
 
                 <EditText
                     android:id="@+id/password"
@@ -88,10 +94,10 @@
                     android:hint="@string/enter_password"
                     android:inputType="textPassword"
                     android:paddingHorizontal="@dimen/default_gap"
-                    android:paddingVertical="@dimen/default_gap" />
+                    android:paddingVertical="@dimen/default_gap"
+                    tools:targetApi="o" />
 
                 <Button
-                    android:id="@+id/clearPassword"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -106,7 +112,8 @@
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap">
+                android:paddingVertical="@dimen/default_gap"
+                tools:targetApi="o">
 
 
                 <Button
@@ -117,7 +124,8 @@
                     android:onClick="login"
                     android:paddingHorizontal="@dimen/default_gap"
                     android:paddingVertical="@dimen/default_gap"
-                    android:text="@string/login" />
+                    android:text="@string/login"
+                    tools:targetApi="o" />
 
                 <Button
                     android:id="@+id/signUp"
@@ -127,7 +135,8 @@
                     android:onClick="signUp"
                     android:paddingHorizontal="@dimen/default_gap"
                     android:paddingVertical="@dimen/default_gap"
-                    android:text="@string/sign_up" />
+                    android:text="@string/sign_up"
+                    tools:targetApi="o" />
             </LinearLayout>
 
             <Button
@@ -138,7 +147,8 @@
                 android:onClick="signOut"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
-                android:text="@string/sign_out" />
+                android:text="@string/sign_out"
+                tools:targetApi="o" />
         </LinearLayout>
 
     </LinearLayout>
@@ -153,5 +163,6 @@
         android:text="@string/back"
         android:textAllCaps="true"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:targetApi="o" />
 </RelativeLayout>

@@ -26,21 +26,17 @@ public class LoadCarParks {
             try {
                 if (task.get() == null) {
                     SharedPreferences sharedPref = context.getSharedPreferences("backUp", Context.MODE_PRIVATE);
-                    try {
-                        json = new JSONObject(sharedPref.getString("jsonBackUp", null));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                    json = new JSONObject(sharedPref.getString("parkingBackup", null));
                 } else {
                     json = task.get();
                 }
-            } catch (InterruptedException | ExecutionException e) {
+            } catch (InterruptedException | ExecutionException | JSONException e) {
                 e.printStackTrace();
             }
         } else {
             SharedPreferences sharedPref = context.getSharedPreferences("backUp", Context.MODE_PRIVATE);
             try {
-                json = new JSONObject(sharedPref.getString("jsonBackUp", null));
+                json = new JSONObject(sharedPref.getString("parkingBackup", null));
             } catch (JSONException e) {
                 e.printStackTrace();
             }

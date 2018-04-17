@@ -49,7 +49,7 @@
         <activity android:name=".Login" />
         <activity android:name=".TrafficDirection" />
         <activity android:name=".ChooseParkTraffic" />
-        <activity android:name=".ViewParkTraffic"></activity>
+        <activity android:name=".ViewParkTraffic" />
     </application>
 
 </manifest>

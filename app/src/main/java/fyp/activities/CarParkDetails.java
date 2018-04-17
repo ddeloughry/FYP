@@ -99,7 +99,10 @@ public class CarParkDetails extends AppCompatActivity {
 
     private boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        NetworkInfo netInfo = null;
+        if (cm != null) {
+            netInfo = cm.getActiveNetworkInfo();
+        }
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 

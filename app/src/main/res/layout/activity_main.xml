@@ -9,10 +9,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap">
+        android:paddingVertical="@dimen/default_gap"
+        tools:targetApi="o">
 
         <ImageButton
-            android:id="@+id/imageButton5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -38,7 +38,6 @@
             tools:targetApi="o" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -69,7 +68,6 @@
             android:paddingVertical="@dimen/default_gap">
 
             <Button
-                android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"

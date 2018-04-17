@@ -20,24 +20,21 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText email, password;
-    private TextView loginTextview, viewEmail;
-    private LinearLayout emailBox, passwordBox;
-    private Button login, signOut, signUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        emailBox = findViewById(R.id.emailBox);
-        passwordBox = findViewById(R.id.passwordBox);
-        loginTextview = findViewById(R.id.loginTextview);
+        LinearLayout emailBox = findViewById(R.id.emailBox);
+        LinearLayout passwordBox = findViewById(R.id.passwordBox);
+        TextView loginTextview = findViewById(R.id.loginTextview);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
-        signOut = findViewById(R.id.signOut);
-        signUp = findViewById(R.id.signUp);
-        login = findViewById(R.id.login);
-        viewEmail = findViewById(R.id.viewEmail);
+        Button signOut = findViewById(R.id.signOut);
+        Button signUp = findViewById(R.id.signUp);
+        Button login = findViewById(R.id.login);
+        TextView viewEmail = findViewById(R.id.viewEmail);
         if (mAuth.getCurrentUser() != null) {
             signOut.setVisibility(View.VISIBLE);
             signUp.setVisibility(View.GONE);

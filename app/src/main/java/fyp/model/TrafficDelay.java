@@ -12,6 +12,10 @@ public class TrafficDelay {
         this.delay = delay;
     }
 
+    public TrafficDelay() {
+
+    }
+
     public String getCarParkName() {
         return carParkName;
     }

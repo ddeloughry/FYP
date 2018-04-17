@@ -65,7 +65,7 @@ public class CarParks extends AppCompatActivity {
         startActivity(getIntent());
     }
 
-    public void goToCarPark(String carParkName) {
+    private void goToCarPark(String carParkName) {
         Intent intent = new Intent(this, CarParkDetails.class);
         intent.putExtra("carParkName", carParkName);
         startActivity(intent);

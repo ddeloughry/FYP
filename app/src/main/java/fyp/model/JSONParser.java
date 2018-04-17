@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class JSONParser extends AsyncTask<JSONObject, Void, ArrayList<CarPark>> {
+class JSONParser extends AsyncTask<JSONObject, Void, ArrayList<CarPark>> {
     private static HashMap<Integer, ParkDateTime> times;
 
     private static long getLongTime(String dateString) throws ParseException {

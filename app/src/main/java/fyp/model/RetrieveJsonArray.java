@@ -32,7 +32,7 @@ public class RetrieveJsonArray extends AsyncTask<URL, Void, JSONArray> {
             try {
                 urlConnection = (urls[0]).openConnection();
                 is = urlConnection.getInputStream();
-                urlConnection.setConnectTimeout(10);
+//                urlConnection.setConnectTimeout(10);
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
@@ -64,7 +64,7 @@ public class RetrieveJsonArray extends AsyncTask<URL, Void, JSONArray> {
     private void backUpJson(String jsonText) {
         SharedPreferences sharedPref = context.get().getSharedPreferences("backUp", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("jsonBackUp", jsonText);
+        editor.putString("trafficBackup", jsonText);
         editor.apply();
     }
 

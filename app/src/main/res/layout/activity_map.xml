@@ -10,7 +10,8 @@
         android:layout_alignParentTop="true"
         android:orientation="vertical"
         android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap">
+        android:paddingVertical="@dimen/default_gap"
+        tools:targetApi="o">
 
         <TextView
             android:layout_width="match_parent"
@@ -22,7 +23,8 @@
             android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="36sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:targetApi="o" />
 
         <fragment
             android:id="@+id/map"
@@ -42,5 +44,6 @@
         android:text="@string/back"
         android:textAllCaps="true"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:targetApi="o" />
 </RelativeLayout>

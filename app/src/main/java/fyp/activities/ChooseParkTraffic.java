@@ -50,7 +50,7 @@ public class ChooseParkTraffic extends AppCompatActivity {
         vwCarParkNames.add((TextView) findViewById(R.id.btn7));
     }
 
-    public void goToCarPark(String carParkName) {
+    private void goToCarPark(String carParkName) {
         Intent intent = new Intent(this, ViewParkTraffic.class);
         intent.putExtra("carParkName", carParkName);
         intent.putExtra("direction", getIntent().getStringExtra("direction"));

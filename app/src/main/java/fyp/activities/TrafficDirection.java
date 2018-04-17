@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.jjoe64.graphview.series.LineGraphSeries;
-
 public class TrafficDirection extends AppCompatActivity {
 
     @Override

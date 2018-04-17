@@ -26,10 +26,8 @@
     <string name="total_spaces">german</string>
     <string name="name">german</string>
     <string name="search">german</string>
-    <string name="clear">german</string>
     <string name="enter_destination">german</string>
     <string name="recommend_car_park">german</string>
-    <string name="delay">german</string>
     <string name="refresh_activity_information">german</string>
     <string name="res_succ">german</string>
     <string name="enter_lice_pl">german</string>
@@ -47,12 +45,10 @@
     <string name="unavailable">german</string>
     <string name="last_updated">german</string>
     <string name="times">german</string>
-    <string name="title_activity_login">german</string>
     <string name="enter_password">german</string>
     <string name="login">german</string>
     <string name="sign_up">german</string>
     <string name="enter_email_address">german</string>
-    <string name="clears_email_field">german</string>
     <string name="clears_input_text">german</string>
     <string name="go_to_login">german</string>
     <string name="go_to_options">german</string>
