@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -45,23 +46,27 @@ public class Reservation extends AppCompatActivity {
             reservationDb.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
+                    ProgressBar progressBar = findViewById(R.id.progressBar);
+                    progressBar.setVisibility(View.GONE);
                     if (dataSnapshot.exists() && mAuth.getCurrentUser() != null) {
                         selectedReservation.setCarParkName((dataSnapshot.getValue(ParkReservation.class)).getCarParkName());
                         selectedReservation.setStartTime((dataSnapshot.getValue(ParkReservation.class)).getStartTime());
                         selectedReservation.setEndTime((dataSnapshot.getValue(ParkReservation.class)).getEndTime());
                         selectedReservation.setLicencePlate((dataSnapshot.getValue(ParkReservation.class)).getLicencePlate());
                         vwCarParkName.setText(selectedReservation.getCarParkName());
-                        DateFormat formatter = new SimpleDateFormat("HH:mm:ss\nE dd-MMM-yy", Locale.UK);
+                        DateFormat formatter = new SimpleDateFormat("HH:mm:ss\ndd-MMM-yy", Locale.UK);
                         viewStartTime.setText(String.valueOf(formatter.format(new Date(selectedReservation.getStartTime()))));
                         viewEndTime.setText(String.valueOf(formatter.format(new Date(selectedReservation.getEndTime()))));
                         viewLicensePlate.setText(String.valueOf(selectedReservation.getLicencePlate()));
                         reserveGrid.setVisibility(View.VISIBLE);
+
                     } else {
                         vwCarParkName.setText(getString(R.string.you_do_not_currently_have_any_reservations));
                         viewStartTime.setText("");
                         viewEndTime.setText("");
                         viewLicensePlate.setText("");
                         reserveGrid.setVisibility(View.INVISIBLE);
+
                     }
                 }
 
@@ -72,6 +77,8 @@ public class Reservation extends AppCompatActivity {
             });
         } else {
             vwCarParkName.setText(getString(R.string.please_log_in_to_reserve_a_space));
+            ProgressBar progressBar = findViewById(R.id.progressBar);
+            progressBar.setVisibility(View.GONE);
         }
     }
 

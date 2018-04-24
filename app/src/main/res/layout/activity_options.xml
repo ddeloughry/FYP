@@ -2,22 +2,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_gap">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
+        android:padding="@dimen/default_gap"
         tools:targetApi="o">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             android:text="@string/options"
             android:textAlignment="center"
             android:textAllCaps="true"
@@ -28,8 +27,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             android:text="@string/language"
             android:textAlignment="center"
             android:textAllCaps="true"
@@ -40,8 +38,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             tools:targetApi="o">
 
             <ImageButton
@@ -50,8 +47,7 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/set_english"
                 android:onClick="setEnglish"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 app:srcCompat="@drawable/en"
                 tools:targetApi="o" />
 
@@ -61,8 +57,7 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/set_german"
                 android:onClick="setDeutsch"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 app:srcCompat="@drawable/deu"
                 tools:targetApi="o" />
         </LinearLayout>
@@ -74,11 +69,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:onClick="backToMenu"
-        android:paddingHorizontal="@dimen/default_gap"
+        android:padding="@dimen/default_gap"
         android:text="@string/back"
         android:textAllCaps="true"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:paddingVertical="@dimen/default_gap"
         tools:targetApi="o" />
 </RelativeLayout>

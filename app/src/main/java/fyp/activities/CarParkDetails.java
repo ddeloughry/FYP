@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -65,8 +66,14 @@ public class CarParkDetails extends AppCompatActivity {
             vwFreeSpaces.setText(getString(R.string.unavailable));
         }
         vwTotalSpaces.setText(String.valueOf(selectedCarPark.getTotalSpaces()));
-        DateFormat formatter = new SimpleDateFormat("HH:mm:ss\nE dd-MMM-yy", Locale.getDefault());
-        vwLastUpdated.setText(String.valueOf(formatter.format(new Date(selectedCarPark.getLastUpdated()))));
+        DateFormat formatter = null;
+        if (DateUtils.isToday(selectedCarPark.getLastUpdated())) {
+            formatter = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+            vwLastUpdated.setText(String.valueOf("Today\n" + formatter.format(new Date(selectedCarPark.getLastUpdated()))));
+        } else {
+            formatter = new SimpleDateFormat("HH:mm:ss\ndd-MM-yy", Locale.getDefault());
+            vwLastUpdated.setText(String.valueOf(formatter.format(new Date(selectedCarPark.getLastUpdated()))));
+        }
         vwVehicleHeight.setText(String.valueOf(selectedCarPark.getVehicleHeight() + "m"));
         vwTimes.setText(getTodaysTimes(selectedCarPark.getTimes()));
 

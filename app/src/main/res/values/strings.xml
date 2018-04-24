@@ -60,4 +60,5 @@
     <string name="sign_out">Sign Out</string>
     <string name="select_car_park">Select Car Park</string>
     <string name="direction">Direction</string>
+    <string name="estimate_direction">Estimate direction</string>
 </resources>

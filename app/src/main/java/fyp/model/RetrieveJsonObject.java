@@ -18,7 +18,7 @@ import java.nio.charset.Charset;
 import java.util.concurrent.atomic.AtomicReference;
 
 
-class RetrieveJsonObject extends AsyncTask<URL, Void, JSONObject> {
+public class RetrieveJsonObject extends AsyncTask<URL, Void, JSONObject> {
     private final AtomicReference<Context> context = new AtomicReference<>();
 
     public RetrieveJsonObject(Context context) {

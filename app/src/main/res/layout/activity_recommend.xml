@@ -2,21 +2,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_gap">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
+        android:padding="@dimen/default_gap"
         tools:targetApi="o">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             android:text="@string/recommend_car_park"
             android:textAlignment="center"
             android:textAllCaps="true"
@@ -28,32 +27,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             tools:targetApi="o">
 
             <EditText
                 android:id="@+id/entDest"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/enter_destination"
                 android:inputType="textPersonName"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
-                android:textSize="24sp"
+                android:padding="@dimen/default_gap"
+                android:textSize="20sp"
                 tools:targetApi="o" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/clears_input_text"
+                android:onClick="clearText"
+                android:padding="@dimen/default_gap"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
         </LinearLayout>
 
         <Button
+            android:id="@+id/searchLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/default_gap"
+            android:text="@string/search"
+            android:textSize="24sp"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/viewNearest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            android:text="@string/search"
-            tools:targetApi="o" />
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -62,8 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:onClick="backToMenu"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
+        android:padding="@dimen/default_gap"
         android:text="@string/back"
         android:textAllCaps="true"
         android:textSize="24sp"

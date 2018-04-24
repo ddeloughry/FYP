@@ -2,22 +2,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_gap">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
+        android:padding="@dimen/default_gap"
         tools:targetApi="o">
 
         <TextView
             android:id="@+id/viewName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             android:text="@string/reserve_a_space"
             android:textAlignment="center"
             android:textAllCaps="true"
@@ -29,8 +28,7 @@
             android:id="@+id/carParkName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             android:textAlignment="center"
             android:textSize="20sp"
             tools:targetApi="o" />
@@ -39,8 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             tools:targetApi="o">
 
             <EditText
@@ -51,31 +48,30 @@
                 android:ems="10"
                 android:hint="@string/enter_licence_plate_number"
                 android:inputType="textPersonName"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 android:textSize="20sp"
                 tools:targetApi="o" />
 
             <ImageButton
                 android:id="@+id/clearText"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:contentDescription="@string/clears_input_text"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
                 tools:targetApi="o" />
 
         </LinearLayout>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:onClick="reserveSpace"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             android:text="@string/reserve"
+            android:textSize="24sp"
             tools:targetApi="o" />
 
     </LinearLayout>
@@ -85,8 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:onClick="cancelReservation"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
+        android:padding="@dimen/default_gap"
         android:text="@string/cancel"
         android:textAllCaps="true"
         android:textSize="24sp"

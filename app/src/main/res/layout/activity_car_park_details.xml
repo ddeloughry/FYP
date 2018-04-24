@@ -66,6 +66,7 @@
             android:layout_height="wrap_content"
             android:clickable="false"
             android:columnCount="2"
+            android:padding="@dimen/default_gap"
             android:paddingHorizontal="@dimen/default_gap"
             android:paddingVertical="@dimen/default_gap"
             android:rowCount="9"
@@ -87,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
+                android:textAlignment="center"
                 android:textSize="20sp"
                 tools:targetApi="o" />
 
@@ -105,6 +107,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
+                android:textAlignment="center"
                 android:textSize="20sp"
                 tools:targetApi="o" />
 
@@ -123,6 +126,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
+                android:textAlignment="center"
                 android:textSize="20sp"
                 tools:targetApi="o" />
 
@@ -141,6 +145,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
+                android:textAlignment="center"
                 android:textSize="20sp"
                 tools:targetApi="o" />
 
@@ -159,6 +164,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
+                android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textSize="20sp"
                 tools:targetApi="o" />
@@ -178,6 +184,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="@dimen/default_gap"
                 android:paddingVertical="@dimen/default_gap"
+                android:textAlignment="center"
                 android:textSize="20sp"
                 tools:targetApi="o" />
 

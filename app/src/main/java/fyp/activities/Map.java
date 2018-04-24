@@ -1,7 +1,9 @@
 package fyp.activities;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
@@ -46,7 +48,15 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(getMidPoint()));
         googleMap.setMinZoomPreference(12.7f);
         googleMap.setMaxZoomPreference(20.0f);
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        } else {
+            googleMap.setMyLocationEnabled(false);
+        }
+        googleMap.setMyLocationEnabled(true);
     }
+
 
     private LatLng getMidPoint() {
         double lats = 0, lngs = 0;
@@ -66,4 +76,6 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
     public void backToMenu(View view) {
         onBackPressed();
     }
+
+
 }

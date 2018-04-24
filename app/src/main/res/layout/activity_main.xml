@@ -2,25 +2,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_gap">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
+        android:padding="@dimen/default_gap"
         tools:targetApi="o">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="goToOptions"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            app:srcCompat="@drawable/options"
             android:contentDescription="@string/go_to_options"
+            android:onClick="goToOptions"
+            android:padding="@dimen/default_gap"
+            app:srcCompat="@drawable/options"
             tools:targetApi="o" />
 
         <TextView
@@ -28,8 +27,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="sans-serif"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
+            android:padding="@dimen/default_gap"
             android:text="@string/main_menu"
             android:textAlignment="center"
             android:textAllCaps="true"
@@ -41,11 +39,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="goToLogin"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap"
-            app:srcCompat="@drawable/login"
             android:contentDescription="@string/go_to_login"
+            android:onClick="goToLogin"
+            android:padding="@dimen/default_gap"
+            app:srcCompat="@drawable/login"
             tools:targetApi="o" />
 
     </LinearLayout>
@@ -57,15 +54,13 @@
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:orientation="vertical"
-        android:paddingHorizontal="@dimen/default_gap"
-        android:paddingVertical="@dimen/default_gap"
+        android:padding="@dimen/default_gap"
         tools:targetApi="o">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:padding="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -73,8 +68,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="false"
                 android:onClick="goToMaps"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 android:text="@string/map"
                 android:textAllCaps="true"
                 android:textSize="24sp"
@@ -85,8 +79,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:padding="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -95,8 +88,7 @@
                 android:layout_centerInParent="false"
                 android:layout_centerVertical="false"
                 android:onClick="goToCarParksList"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 android:text="@string/car_parks"
                 android:textAllCaps="true"
                 android:textSize="24sp" />
@@ -105,8 +97,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:padding="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -114,8 +105,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="false"
                 android:onClick="goToTrafficEstimations"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 android:text="@string/traffic_estimations"
                 android:textAllCaps="true"
                 android:textSize="24sp" />
@@ -124,8 +114,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:padding="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -133,8 +122,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="false"
                 android:onClick="goToReservation"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 android:text="@string/view_reservation"
                 android:textAllCaps="true"
                 android:textSize="24sp" />
@@ -143,8 +131,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/default_gap"
-            android:paddingVertical="@dimen/default_gap">
+            android:padding="@dimen/default_gap">
 
             <Button
                 android:layout_width="wrap_content"
@@ -152,8 +139,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="false"
                 android:onClick="goToRecommendPark"
-                android:paddingHorizontal="@dimen/default_gap"
-                android:paddingVertical="@dimen/default_gap"
+                android:padding="@dimen/default_gap"
                 android:text="@string/recommend_car_park"
                 android:textAllCaps="true"
                 android:textSize="24sp" />

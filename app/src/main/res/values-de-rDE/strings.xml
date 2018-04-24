@@ -61,4 +61,5 @@
     <string name="east">german</string>
     <string name="west">german</string>
     <string name="x">X</string>
+    <string name="estimate_direction">german</string>
 </resources>
