@@ -55,6 +55,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
             googleMap.setMyLocationEnabled(false);
         }
         googleMap.setMyLocationEnabled(true);
+        googleMap.setTrafficEnabled(true);
     }
 
 

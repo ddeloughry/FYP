@@ -106,11 +106,8 @@ public class CarParkDetails extends AppCompatActivity {
 
     private boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = null;
-        if (cm != null) {
-            netInfo = cm.getActiveNetworkInfo();
-        }
-        return netInfo != null && netInfo.isConnectedOrConnecting();
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo.isConnectedOrConnecting();
     }
 
     private String getAllTimes(HashMap<Integer, ParkDateTime> times) {

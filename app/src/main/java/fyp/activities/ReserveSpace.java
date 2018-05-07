@@ -9,20 +9,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
+import fyp.model.FirebaseController;
 import fyp.model.ParkReservation;
 
 public class ReserveSpace extends AppCompatActivity {
     private EditText enterLicence;
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_reserve_space);
         TextView carParkName = findViewById(R.id.carParkName);
         enterLicence = findViewById(R.id.enterLicencePlate);
@@ -38,13 +33,12 @@ public class ReserveSpace extends AppCompatActivity {
 
 
     public void reserveSpace(View view) {
-        if (!enterLicence.getText().toString().equalsIgnoreCase("") && mAuth.getCurrentUser() != null) {
+        if (!enterLicence.getText().toString().equalsIgnoreCase("") && FirebaseController.getLoggedUser().getEmail() != null) {
             ParkReservation reservation = new ParkReservation(System.currentTimeMillis(),
                     System.currentTimeMillis() + 3600000,
                     getIntent().getStringExtra("carParkName"),
                     enterLicence.getText().toString());
-            DatabaseReference reservationDb = (FirebaseDatabase.getInstance()).getReference("reservation").child(mAuth.getCurrentUser().getEmail().replace(".", "_"));
-            reservationDb.setValue(reservation);
+            FirebaseController.reserveSpace(reservation, FirebaseController.getLoggedUser().getEmail().replace(".", "_"));
             enterLicence.setText("");
             Toast.makeText(this, getString(R.string.res_succ) + "!", Toast.LENGTH_LONG).show();
             cancelReservation(view);

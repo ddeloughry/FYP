@@ -13,51 +13,57 @@ import android.widget.Button;
 import java.util.List;
 
 public class TrafficDirection extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traffic);
-
+        Location current;
         Button estimateDirection = findViewById(R.id.estimateDirection);
-        Location current = getLastKnownLocation();
-        double eastDistance = getShortestDistance(51.953303, -7.847526, 51.898727, -8.471800, current.getLatitude(), current.getLongitude());
-        double westDistance = getShortestDistance(51.904757, -8.958214, 51.898727, -8.471800, current.getLatitude(), current.getLongitude());
-        double northDistance = getShortestDistance(52.137328, -8.645663, 51.898727, -8.471800, current.getLatitude(), current.getLongitude());
-        double southDistance = getShortestDistance(51.620450, -8.905504, 51.898727, -8.471800, current.getLatitude(), current.getLongitude());
-        double[] distanceToRoutes = {northDistance,
-                westDistance,
-                eastDistance,
-                southDistance};
-        if (isSmallest(distanceToRoutes, eastDistance)) {
-            estimateDirection.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    goToEast(null);
-                }
-            });
-        } else if (isSmallest(distanceToRoutes, westDistance)) {
-            estimateDirection.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    goToWest(null);
-                }
-            });
-        } else if (isSmallest(distanceToRoutes, northDistance)) {
-            estimateDirection.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    goToNorth(null);
-                }
-            });
-        } else if (isSmallest(distanceToRoutes, southDistance)) {
-            estimateDirection.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    goToSouth(null);
-                }
-            });
+        estimateDirection.setEnabled(false);
+        current = getLastKnownLocation();
+        if (current != null) {
+            estimateDirection.setEnabled(true);
+            double eastDistance = getShortestDistance(51.953303, -7.847526, 51.898727, -8.471800, current.getLatitude(), current.getLongitude());
+            double westDistance = getShortestDistance(51.904757, -8.958214, 51.898727, -8.471800, current.getLatitude(), current.getLongitude());
+            double northDistance = getShortestDistance(52.137328, -8.645663, 51.898727, -8.471800, current.getLatitude(), current.getLongitude());
+            double southDistance = getShortestDistance(51.620450, -8.905504, 51.898727, -8.471800, current.getLatitude(), current.getLongitude());
+            double[] distanceToRoutes = {northDistance,
+                    westDistance,
+                    eastDistance,
+                    southDistance};
+            if (isSmallest(distanceToRoutes, eastDistance)) {
+                estimateDirection.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goToEast(null);
+                    }
+                });
+            } else if (isSmallest(distanceToRoutes, westDistance)) {
+                estimateDirection.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goToWest(null);
+                    }
+                });
+            } else if (isSmallest(distanceToRoutes, northDistance)) {
+                estimateDirection.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goToNorth(null);
+                    }
+                });
+            } else if (isSmallest(distanceToRoutes, southDistance)) {
+                estimateDirection.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goToSouth(null);
+                    }
+                });
+            }
         }
     }
+
 
     public void goToNorth(View view) {
         Intent intent = new Intent(this, ChooseParkTraffic.class);
@@ -86,7 +92,6 @@ public class TrafficDirection extends AppCompatActivity {
         intent.putExtra("int", 3);
         startActivity(intent);
     }
-
 
     private boolean isSmallest(double[] doubleArray, double distance) {
         boolean isSmallest = false;

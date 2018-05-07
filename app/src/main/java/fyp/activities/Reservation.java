@@ -38,7 +38,6 @@ public class Reservation extends AppCompatActivity {
         final TextView viewEndTime = findViewById(R.id.txtvw1);
         final TextView viewLicensePlate = findViewById(R.id.txtvw2);
 
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reservationDb;
         if (mAuth.getCurrentUser() != null) {
