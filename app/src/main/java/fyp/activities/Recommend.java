@@ -120,8 +120,8 @@ class ParseGeoJson extends AsyncTask<JSONObject, Void, String> {
             JSONObject jsonObject1 = jsonArray.getJSONObject(0);
             JSONObject jsonObject2 = jsonObject1.getJSONObject("geometry");
             JSONObject jsonObject3 = jsonObject2.getJSONObject("location");
-            return String.valueOf(jsonObject3.getDouble("lat")) + ","
-                    + String.valueOf(jsonObject3.getDouble("lng"));
+            return String.valueOf(jsonObject3.getDouble("lat")) + "," 
+                + String.valueOf(jsonObject3.getDouble("lng"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
