@@ -3,10 +3,12 @@ package fyp.model;
 public class ParkDistance {
     private String name;
     private double distance;
+    private boolean isFull;
 
-    public ParkDistance(String name, double distance) {
+    public ParkDistance(String name, double distance, boolean isFull) {
         this.name = name;
         this.distance = distance;
+        this.isFull = isFull;
     }
 
     public double getDistance() {
@@ -15,5 +17,9 @@ public class ParkDistance {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isFull() {
+        return isFull;
     }
 }

@@ -68,17 +68,18 @@ public class Recommend extends AppCompatActivity {
                                 Location park = new Location("Park");
                                 park.setLatitude(carPark.getLatitude());
                                 park.setLongitude(carPark.getLongitude());
-                                distances.add(new ParkDistance(carPark.getName(), park.distanceTo(dest)));
+                                distances.add(new ParkDistance(carPark.getName(), park.distanceTo(dest), carPark.isFull()));
                             }
                             nearest[0] = distances.get(0);
                             for (int i = 0; i < distances.size(); i++) {
-                                if (distances.get(i).getDistance() < nearest[0].getDistance()) {
+                                if (distances.get(i).getDistance() < nearest[0].getDistance() && !(distances.get(i).isFull())) {
                                     nearest[0] = distances.get(i);
                                 }
                             }
                             for (CarPark park : carParksList) {
                                 if (park.getName().equalsIgnoreCase(nearest[0].getName())) {
-                                    String diplayInfo = nearest[0].getName() + "\n" + Math.round(nearest[0].getDistance()) + " metres\n" + park.getFreeSpaces() + " spaces";
+                                    String diplayInfo = nearest[0].getName() + "\n" + Math.round(nearest[0].getDistance())
+                                            + " metres\n" + park.getFreeSpaces() + " spaces";
                                     viewNearest.setText(diplayInfo);
                                 }
                             }
@@ -119,7 +120,8 @@ class ParseGeoJson extends AsyncTask<JSONObject, Void, String> {
             JSONObject jsonObject1 = jsonArray.getJSONObject(0);
             JSONObject jsonObject2 = jsonObject1.getJSONObject("geometry");
             JSONObject jsonObject3 = jsonObject2.getJSONObject("location");
-            return String.valueOf(jsonObject3.getDouble("lat")) + "," + String.valueOf(jsonObject3.getDouble("lng"));
+            return String.valueOf(jsonObject3.getDouble("lat")) + ","
+                    + String.valueOf(jsonObject3.getDouble("lng"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
